@@ -32,7 +32,7 @@ local function on_attach(client, buffer)
   if client.server_capabilities.documentHighlightProvider then
     autocmd_clear { group = augroup_highlight, buffer = buffer }
     autocmd { "CursorHold", augroup_highlight, vim.lsp.buf.document_highlight, buffer }
-    autocmd { "CursorMove", augroup_highlight, vim.lsp.buf.clear_references, buffer }
+    autocmd { "CursorMoved", augroup_highlight, vim.lsp.buf.clear_references, buffer }
   end
 
 end
@@ -64,6 +64,7 @@ local function init()
             "-log"
         }
     },
+    zls = {},
   }
   for server, server_config in pairs(language_servers) do
     local config = { on_attach = on_attach, capabilities = capabilities }
