@@ -52,7 +52,8 @@ local function set_vim_keymaps()
 	vim.keymap.set('n', '<leader>tt', '<cmd>FloatermNew<cr>', options_remap)
 
     -- Oil --
-    vim.keymap.set('n', '<leader>o', '<cmd>vsplit<cr> | <cmd>Oil .<cr>', options_remap)
+    vim.keymap.set('n', '<leader>o', '<cmd>Oil<cr>', options_remap)
+    vim.keymap.set('n', '<leader>so', '<cmd>vsplit<cr> | <cmd>Oil .<cr>', options_remap)
 
 	-- Lsp Stuff --
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
