@@ -52,9 +52,11 @@ local function init()
             },
         },
     },
-    pyright = {},
+    -- python lsp
+    ty = {},
     lua_ls = {},
     tsserver = {},
+    tinymist = {},
     clangd = {},
     arduino_language_server = {
         cmd = {
@@ -63,6 +65,15 @@ local function init()
             "-fqbn", "arduino:avr:uno",
             "-log"
         }
+    },
+    rust_analyzer = {
+      settings = {
+        ['rust-analyzer'] = {
+          diagnostics = {
+            enable = false;
+          }
+        }
+      }
     },
     zls = {},
   }
@@ -74,8 +85,9 @@ local function init()
         config[k] = v
       end
     end
-
-    lspconfig[server].setup(config)
+    
+    vim.lsp.enable(server)
+    vim.lsp.config(server, config)
   end
 
   vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)

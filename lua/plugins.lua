@@ -46,12 +46,7 @@ return {
 		dependencies = {
 			{
 				'williamboman/mason-lspconfig.nvim',
-				ensure_installed = {
-					'lua_ls',
-					'gopls',
-					'pyright',
-					'arduino_language_server',
-				},
+				ensure_installed = {},
 			},
 		},
 	},

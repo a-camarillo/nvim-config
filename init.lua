@@ -13,6 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.textwidth = 78
+vim.opt.formatoptions = 'jtcroq'
 
 
 vim.o.relativenumber = true
