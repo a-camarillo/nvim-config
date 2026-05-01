@@ -90,8 +90,34 @@ return {
         end
 	},
     {
+        'Vigemus/iron.nvim',
+        opts = {},
+        config = function()
+          require 'configs.iron'
+        end,
+    },
+    {
       'ellisonleao/glow.nvim',
       config = true,
       cmd = 'Glow',
+    },
+    {
+      'quarto-dev/quarto-nvim',
+      dependencies = {
+        'jmbuhr/otter.nvim',
+        'nvim-treesitter/nvim-treesitter',
+      },
+      opts = {},
+      config = function()
+        require 'configs.quarto'
+      end,
+    },
+    {
+      'jmbhur/otter.nvim',
+      dependencies = {
+        'neovim/nvim-lspconfig',
+        'nvim-treesitter/nvim-treesitter',
+      },
+      opts = {},
     },
 }
