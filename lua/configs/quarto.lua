@@ -9,7 +9,7 @@ quarto.setup({
     languages = { "python" },
     diagnostics = {
       enabled = true,
-      triggers = { "BufReadPre", "BufWritePost" },
+      triggers = { "BufWritePost" },
     },
     completion = {
       enabled = true,
