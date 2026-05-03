@@ -1,8 +1,5 @@
 local quarto = require 'quarto'
 
--- TODO:
--- Figure out how to enable otter on buffer attach
-
 quarto.setup({
   debug = false,
   closePreviewOnExit = true,
@@ -12,7 +9,7 @@ quarto.setup({
     languages = { "python" },
     diagnostics = {
       enabled = true,
-      triggers = { "BufWritePost" },
+      triggers = { "BufReadPre", "BufWritePost" },
     },
     completion = {
       enabled = true,
