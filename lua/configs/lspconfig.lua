@@ -92,17 +92,10 @@ local function init()
 
   vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 
-  treesitter.setup {
-    ensure_installed = {
-      "c",
-      "lua",
-      "python",
-      "rust",
-    },
-    highlight = { enable = true },
-    indent = { enable = true },
-    rainbow = { enable = true },
-  }
+  treesitter.install({
+    'python',
+    'rust'
+  })
 
 end
 
